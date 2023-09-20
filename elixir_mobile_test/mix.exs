@@ -49,7 +49,10 @@ defmodule ElixirMobileTest.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:exqlite, github: "elixir-desktop/exqlite", override: true},
+      {:desktop, "~> 1.5"},
+      {:wx, "~> 1.1", hex: :bridge, targets: [:android, :ios]}
     ]
   end
 
