@@ -12,13 +12,16 @@ config :elixir_mobile_test,
 
 # Configures the endpoint
 config :elixir_mobile_test, ElixirMobileTestWeb.Endpoint,
-  url: [host: "localhost"],
+  # url: [host: "localhost"],
+  http: [ip: {127, 0, 0, 1}, port: 10_000 + :rand.uniform(45_000)],
   render_errors: [
     formats: [html: ElixirMobileTestWeb.ErrorHTML, json: ElixirMobileTestWeb.ErrorJSON],
     layout: false
   ],
   pubsub_server: ElixirMobileTest.PubSub,
-  live_view: [signing_salt: "5hLLE5s6"]
+  live_view: [signing_salt: "5hLLE5s6"],
+  secret_key_base: :crypto.strong_rand_bytes(32),
+  server: true
 
 # Configures the mailer
 #

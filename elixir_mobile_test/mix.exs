@@ -18,7 +18,7 @@ defmodule ElixirMobileTest.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {ElixirMobileTest.Application, []},
+      mod: {ElixirMobileTest, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
